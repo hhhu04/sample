@@ -1,0 +1,15 @@
+{% extends 'form.html'  %}
+{% block content %}
+
+<form method="post">
+{% csrf_token %}
+<input type="text" name="name"  placeholder="이름"><br>
+<input type="text" name="phNum" placeholder="폰번"><br>
+<input type="email" name="email" placeholder="이메일"><br>
+<input type="text" name="addr" placeholder="주소"><br>
+<input type="date" name="bir"><br>
+<input type="text" name="user" value="{{user}}"><br>
+<input type="submit" value="추가"><br>
+</form>
+
+{%endblock%}

@@ -1,0 +1,30 @@
+<div align="center"><h1>인명록</h1></div>
+<div align="right">
+<hr>
+<a href="http://127.0.0.1:8000/">Home</a>&nbsp;
+<a href="{%url 'index' 1 %}">phonebooks</a>&nbsp;
+{% if user.is_active  %}
+	<a href="{%  url 'logout' %}">로그아웃 </a>
+	{% else %}
+	<a href="{%  url 'login' %}">로그인</a>
+	{%endif%}
+</div>
+<hr>
+<div align="center">
+{% block content %}
+
+
+{% endblock %}
+</div>
+<hr>
+<div align="right">
+<a href="naver.com">네이버 </a>&nbsp;
+<a href="google.com">구글 </a>&nbsp;
+<a href="daum.net">다음 </a>&nbsp;
+</div>
+
+
+
+
+
+

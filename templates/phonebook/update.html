@@ -1,0 +1,33 @@
+{% extends 'form.html'  %}
+{% block content %}
+
+<table border='1'>
+<caption>개인정보변경</caption>
+<form method="post">
+{% csrf_token %}
+<tr>
+<th>이름</th><th><input type="text" name="name"  value={{phonebook.이름}}></th>
+</tr>
+<tr>
+<th>전화번호</th><th><input type="text" name="phNum" value={{phonebook.전화번호}}></th>
+</tr>
+<tr>
+<th>이메일</th><th><input type="email" name="email" value={{phonebook.이메일}}></th>
+</tr>
+<tr>
+<th>주소</th><th><input type="text" name="addr" value={{phonebook.주소}}></th>
+</tr>
+<tr>
+<th>생년월일</th><th><input type="date" name="bir" value={{phonebook.생년월일}}></th>
+</tr>
+<tr>
+<th colspan='3'><input type="submit" value="변경"><button type="button" 
+onclick="location.href='{% url 'detail' phonebook.id%}'">취소</button></th>
+</tr>
+</form>
+
+</table>
+
+
+{%endblock%}
+

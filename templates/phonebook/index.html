@@ -1,0 +1,39 @@
+{% extends 'form.html'  %}
+{% block content %}
+<h3>목록</h3>
+<table border='1'>
+{%for k in 유저%}
+<tr>
+<th>ID</th><th>{{k.id}}</th><th>이름</th><th><a href="{%  url 'detail' k.id %}">{{k.이름}}</a>
+<th>전화번호</th><th>{{k.전화번호}}</th>
+</tr>
+{%endfor%}
+</table>
+<hr>
+{% if user.is_active %}
+{% if 유저.has_next %}
+
+<button type="button" onclick="location.href='{% url "index" 유저.next_page_number %}'">이전</button>
+{% else %}
+<button type="button" disabled>이전</button>
+{% endif %}
+
+{% for i in arrPage %}
+	<a href="{% url 'index' i %}">[{{i}}]</a>
+{% endfor %}
+
+{{유저.paginator.num_pages}}/{{유저.number}}
+
+{% if 유저.has_previous %}
+<button type="button" onclick="location.href='{% url "index" 유저.previous_page_number %}'">다음</button>
+{% else %}
+<button type="button" disabled>다음</button>
+{% endif %}
+
+
+
+	<button type="button" onclick="location.href='{% url 'add' %}'">추가</button>
+{%else%}
+	<a href="{%  url 'login' %}">로그인</a>
+{% endif%}
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends 'form.html'  %}
+{% block content %}
+
+<table border='1'>
+{%for k,v in userInfo.items%}
+<tr>
+<th>{{k}}</th><th>{{v}}</th>
+</tr>
+{%endfor%}
+</table>
+<button type="button" onclick="location.href='{% url 'index' %}'">목록</button>
+<button type="button" onclick="location.href='{% url 'update' userInfo.id%}'">수정</button>
+<button type="button" onclick="location.href='{% url 'delete' userInfo.id%}'">삭제</button>
+
+{%endblock%}

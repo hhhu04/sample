@@ -1,0 +1,11 @@
+계정등록<br>
+<form method="POST">
+{% csrf_token %}
+	<input type="text" name ="name" placeholder="아이디"><br>
+	<input type="password" name ="pwd" placeholder="비밀번호"><br>
+	<input type="text" name ="f_name" placeholder="이름"><br>
+	<input type="text" name ="l_name" placeholder="성"><br>
+	<input type="email" name ="email" placeholder="이메일"><br>
+	<input type="submit" value="등록"><br>
+
+</form>
