@@ -1,4 +1,16 @@
+{% if user.username == user.작성자 %}
 <script>
 	alert('삭제되었습니다.')
 	location.href='{%  url "index" %}';
 </script>
+{%endif%}
+
+
+{%if user.username != user.작성자 %}
+<script>
+alert('니꺼아님')
+location.href='{%  url "index" 1%}';
+
+</script>
+{%endif%}
+

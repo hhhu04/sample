@@ -1,6 +1,8 @@
 {% extends 'form.html'  %}
 {% block content %}
 
+{% if user.username == phonebook.작성자 %}
+
 <table border='1'>
 <caption>개인정보변경</caption>
 <form method="post">
@@ -28,6 +30,15 @@ onclick="location.href='{% url 'detail' phonebook.id%}'">취소</button></th>
 
 </table>
 
+{%endif%}
+
+{%if user.username != userInfo.작성자 %}
+<script>
+alert('니꺼아님')
+location.href='{%  url "index" 1%}';
+
+</script>
+{%endif%}
 
 {%endblock%}
 

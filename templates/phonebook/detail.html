@@ -8,8 +8,12 @@
 </tr>
 {%endfor%}
 </table>
-<button type="button" onclick="location.href='{% url 'index' %}'">목록</button>
+
+
+<button type="button" onclick="location.href='{% url 'index' 1%}'">목록</button>
+{% if user.username == userInfo.작성자 %}
 <button type="button" onclick="location.href='{% url 'update' userInfo.id%}'">수정</button>
 <button type="button" onclick="location.href='{% url 'delete' userInfo.id%}'">삭제</button>
+{%  endif %}
 
 {%endblock%}
